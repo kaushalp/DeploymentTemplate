@@ -3,7 +3,7 @@
    "contentVersion":"1.0.0.0",
    "parameters":{
       "exisitngWebAppName":{
-         "value":"/subscriptions/4f42d231-1050-4386-b5ca-54cc38d11edf/resourceGroups/ASE-Resource-Group/providers/Microsoft.Web/sites/kaushal"
+         "value":"kaushal"
       },
       "publicCertificateLocation":{
          "value":"LocalMachineMy"
@@ -13,7 +13,7 @@
 				"keyVault": {
                 "id": "/subscriptions/4f42d231-1050-4386-b5ca-54cc38d11edf/resourceGroups/ASE-Resource-Group/providers/Microsoft.KeyVault/vaults/CSSKeyVaultKaushal"
               },
-              "secretName": "kaushalca"
+              "secretName": "kaushalkpcom"
             }
         }
    },
@@ -21,7 +21,7 @@
 	],
 	"outputs": {
 		"certificateBlob": {
-			"type": "securestring"
+			"type": "String",
 			"value": "[parameters('certificateBlob')]"
 		}
 	}

@@ -15,7 +15,7 @@
                 "description": "Location where you wish to install the public certificate. 'LocalMachineMy' is supported in App Service Environment only."
             }
         },
-        "blob": {
+        "certificateBlob": {
             "type": "string",
             "metadata": {
                 "description": "Base 64 encoded public certificate file. 'azuredeploy.parameters.json' file contains an example of this parameter."
@@ -32,13 +32,13 @@
         "location": "[resourceGroup().location]",
         "properties": {
             "publicCertificateLocation": "[parameters('publicCertificateLocation')]",
-            "blob": "[parameters('blob')]"
+            "certificateBlob": "[parameters('certificateBlob')]"
         }
     }],
 	"outputs": {
-		"blob": {
+		"certificateBlob": {
 			"type": "String",
-			"value": "blob"
+			"value": "certificateBlob"
 		}
 	}
 }
