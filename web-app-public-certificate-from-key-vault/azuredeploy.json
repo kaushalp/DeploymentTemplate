@@ -18,29 +18,10 @@
                 "description": "Location where you wish to install the public certificate. 'LocalMachineMy' is supported in App Service Environment only."
             }
         },
-        "vaultName": {
+        "certificateBlob": {
             "type": "String",
             "metadata": {
-                "description": "The name of the keyvault that contains the secret."
-            }
-        },
-        "secretName": {
-            "type": "String",
-            "metadata": {
-                "description": "The name of the secret."
-            }
-        },
-        "vaultResourceGroupName": {
-            "type": "String",
-            "metadata": {
-                "description": "The name of the resource group that contains the keyvault."
-            }
-        },
-        "vaultSubscription": {
-            "defaultValue": "[subscription().subscriptionId]",
-            "type": "String",
-            "metadata": {
-                "description": "The name of the subscription that contains the keyvault."
+                "description": "Gets the certificate from the keyvault."
             }
         }
     },
@@ -55,14 +36,7 @@
             "location": "[resourceGroup().location]",
             "properties": {
                 "publicCertificateLocation": "[parameters('publicCertificateLocation')]",
-                "blob": {
-                    "reference": {
-                        "keyVault": {
-                            "id": "[resourceId(parameters('vaultSubscription'), parameters('vaultResourceGroupName'), 'Microsoft.KeyVault/vaults', parameters('vaultName'))]"
-                        },
-                        "secretName": "[parameters('secretName')]"
-                    }
-                }
+                "blob": "[parameters('certificateblob')]",
             }
         }
     ]
