@@ -3,7 +3,7 @@
    "contentVersion":"1.0.0.0",
    "parameters":{
       "existingWebAppName":{
-         "value":"kaushal"
+         "value":"GEN-UNIQUE"
       },
       "publicCertificateLocation":{
          "value":"LocalMachineMy"
@@ -11,9 +11,9 @@
 	  "certificateBlob": {
 			"reference": {
 				"keyVault": {
-                "id": "/subscriptions/4f42d231-1050-4386-b5ca-54cc38d11edf/resourceGroups/ASE-Resource-Group/providers/Microsoft.KeyVault/vaults/CSSKeyVaultKaushal"
+                "id": "/subscriptions/YOUR-SUBSCRIPTION-ID/resourceGroups/YOUR-RESOURCE-GROUP/providers/Microsoft.KeyVault/vaults/GEN-UNIQUE"
               },
-              "secretName": "kaushalcaraw"
+              "secretName": "YOUR-SECRET"
             }
         }
    }
