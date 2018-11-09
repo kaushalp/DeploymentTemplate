@@ -9,7 +9,7 @@
             ],
             "type": "String",
             "metadata": {
-                "description": "Location where you wish to install the public certificate. 'LocalMachineMy' is supported in App Service Environment only."
+                "description": "Location where you wish to install the public certificate. 'LocalMachineMy' is supported only in App Service Environment."
             }
         },
         "certificateBlob": {
