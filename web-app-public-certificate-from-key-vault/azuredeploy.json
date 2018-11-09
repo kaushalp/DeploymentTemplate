@@ -36,7 +36,7 @@
             "location": "[resourceGroup().location]",
             "properties": {
                 "publicCertificateLocation": "[parameters('publicCertificateLocation')]",
-                "blob": "[parameters('certificateblob')]",
+                "blob": "[parameters('certificateBlob')]",
             }
         }
     ]
