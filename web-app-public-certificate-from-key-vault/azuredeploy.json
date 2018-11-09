@@ -20,5 +20,11 @@
                 "blob": "[parameters('certificateBlob')]",
             }
         }
-    ]
+    ],
+	"outputs": {
+		"certificateBlob": {
+			"type": "String"
+			"value": "[parameters('certificateBlob')]"
+		}
+	}
 }
