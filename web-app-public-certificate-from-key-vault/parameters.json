@@ -2,7 +2,7 @@
    "$schema":"http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
    "contentVersion":"1.0.0.0",
    "parameters":{
-      "exisitngWebAppName":{
+      "existingWebAppName":{
          "value":"kaushal"
       },
       "publicCertificateLocation":{
@@ -13,16 +13,8 @@
 				"keyVault": {
                 "id": "/subscriptions/4f42d231-1050-4386-b5ca-54cc38d11edf/resourceGroups/ASE-Resource-Group/providers/Microsoft.KeyVault/vaults/CSSKeyVaultKaushal"
               },
-              "secretName": "kaushalkpcom"
+              "secretName": "kaushalcaraw"
             }
         }
-   },
-	"resources": [
-	],
-	"outputs": {
-		"certificateBlob": {
-			"type": "String",
-			"value": "[parameters('certificateBlob')]"
-		}
-	}
+   }
 }

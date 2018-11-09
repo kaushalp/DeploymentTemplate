@@ -2,7 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "exisitngWebAppName": {
+        "existingWebAppName": {
             "type": "string",
             "metadata": {
                 "description": "The name of the web app that would use this public certificate. The web app should belong to a dedicated App Service Plan."
@@ -16,29 +16,23 @@
             }
         },
         "certificateBlob": {
-            "type": "string",
+            "type": "securestring",
             "metadata": {
-                "description": "Base 64 encoded public certificate file. 'azuredeploy.parameters.json' file contains an example of this parameter."
+                "description": "Base 64 encoded public certificate file."
             }
         }
     },
     "variables": {
-        "publicCertificateName": "[concat(parameters('exisitngWebAppName'), '-publiccert')]"
+        "publicCertificateName": "[concat(parameters('existingWebAppName'), '-publiccert')]"
     },
     "resources": [{
         "apiVersion": "2016-03-01",
-        "name":"[concat(parameters('exisitngWebAppName'), '/', variables('publicCertificateName'))]",
+        "name":"[concat(parameters('existingWebAppName'), '/', variables('publicCertificateName'))]",
         "type": "Microsoft.Web/sites/publicCertificates",
         "location": "[resourceGroup().location]",
         "properties": {
             "publicCertificateLocation": "[parameters('publicCertificateLocation')]",
-            "certificateBlob": "[parameters('certificateBlob')]"
+            "blob": "[parameters('certificateBlob')]"
         }
-    }],
-	"outputs": {
-		"certificateBlob": {
-			"type": "String",
-			"value": "certificateBlob"
-		}
-	}
+    }]
 }
