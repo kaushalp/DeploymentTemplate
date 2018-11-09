@@ -1,0 +1,28 @@
+{
+   "$schema":"http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+   "contentVersion":"1.0.0.0",
+   "parameters":{
+      "exisitngWebAppName":{
+         "value":"/subscriptions/4f42d231-1050-4386-b5ca-54cc38d11edf/resourceGroups/ASE-Resource-Group/providers/Microsoft.Web/sites/kaushal"
+      },
+      "publicCertificateLocation":{
+         "value":"LocalMachineMy"
+      },
+	  "certificateBlob": {
+			"reference": {
+				"keyVault": {
+                "id": "/subscriptions/4f42d231-1050-4386-b5ca-54cc38d11edf/resourceGroups/ASE-Resource-Group/providers/Microsoft.KeyVault/vaults/CSSKeyVaultKaushal"
+              },
+              "secretName": "kaushalca"
+            }
+        }
+   },
+	"resources": [
+	],
+	"outputs": {
+		"certificateBlob": {
+			"type": "securestring"
+			"value": "[parameters('certificateBlob')]"
+		}
+	}
+}
