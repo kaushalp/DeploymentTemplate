@@ -31,11 +31,11 @@
     "resources": [
         {
             "type": "Microsoft.Web/sites/publicCertificates",
-            "name": "[concat(parameters('existingWebAppName'), '/', variables('publicCertificateName'))]",
+            "name": "["kaushal", '/', variables('publicCertificateName'))]",
             "apiVersion": "2016-03-01",
             "location": "[resourceGroup().location]",
             "properties": {
-                "publicCertificateLocation": "[parameters('publicCertificateLocation')]",
+                "publicCertificateLocation": "LocalMachineMy",
                 "blob": "[parameters('certificateBlob')]",
             }
         }
