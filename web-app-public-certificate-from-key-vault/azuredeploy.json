@@ -20,32 +20,6 @@
         },
         "certificateBlob": {
             "type": "String"
-        },
-
-        "vaultName": {
-            "type": "String",
-            "metadata": {
-                "description": "The name of the keyvault that contains the secret."
-            }
-        },
-        "secretName": {
-            "type": "String",
-            "metadata": {
-                "description": "The name of the secret."
-            }
-        },
-        "vaultResourceGroupName": {
-            "type": "String",
-            "metadata": {
-                "description": "The name of the resource group that contains the keyvault."
-            }
-        },
-        "vaultSubscription": {
-            "defaultValue": "[subscription().subscriptionId]",
-            "type": "String",
-            "metadata": {
-                "description": "The name of the subscription that contains the keyvault."
-            }
         }
     },
     "variables": {
