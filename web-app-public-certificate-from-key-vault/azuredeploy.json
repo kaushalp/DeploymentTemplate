@@ -2,16 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "publicCertificateLocation": {
-            "allowedValues": [
-                "CurrentUserMy",
-                "LocalMachineMy"
-            ],
-            "type": "String",
-            "metadata": {
-                "description": "Location where you wish to install the public certificate. 'LocalMachineMy' is supported in App Service Environment only."
-            }
-        },
         "certificateBlob": {
             "type": "String",
             "metadata": {
