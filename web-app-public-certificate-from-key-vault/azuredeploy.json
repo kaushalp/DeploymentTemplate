@@ -1,0 +1,69 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "existingWebAppName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the web app that would use this public certificate. The web app should belong to a dedicated App Service Plan."
+            }
+        },
+        "publicCertificateLocation": {
+            "allowedValues": [
+                "CurrentUserMy",
+                "LocalMachineMy"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "Location where you wish to install the public certificate. 'LocalMachineMy' is supported in App Service Environment only."
+            }
+        },
+        "vaultName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the keyvault that contains the secret."
+            }
+        },
+        "secretName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the secret."
+            }
+        },
+        "vaultResourceGroupName": {
+            "type": "String",
+            "metadata": {
+                "description": "The name of the resource group that contains the keyvault."
+            }
+        },
+        "vaultSubscription": {
+            "defaultValue": "[subscription().subscriptionId]",
+            "type": "String",
+            "metadata": {
+                "description": "The name of the subscription that contains the keyvault."
+            }
+        }
+    },
+    "variables": {
+        "publicCertificateName": "[concat(parameters('existingWebAppName'), '-publiccert')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Web/sites/publicCertificates",
+            "name": "[concat(parameters('existingWebAppName'), '/', variables('publicCertificateName'))]",
+            "apiVersion": "2016-03-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "publicCertificateLocation": "[parameters('publicCertificateLocation')]",
+                "blob": {
+                    "reference": {
+                        "keyVault": {
+                            "id": "[resourceId(parameters('vaultSubscription'), parameters('vaultResourceGroupName'), 'Microsoft.KeyVault/vaults', parameters('vaultName'))]"
+                        },
+                        "secretName": "[parameters('secretName')]"
+                    }
+                }
+            }
+        }
+    ]
+}
