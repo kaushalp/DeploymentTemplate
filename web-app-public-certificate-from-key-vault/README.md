@@ -15,8 +15,8 @@ Once you have the above, replace them with the actual values in the **parameters
 
 ## Access to KeyVault for deployment
 
-By default, '**`Microsoft.Azure.WebSites`**' Resource Provider (RP) doesn't have access to the Key Vault specified in the template hence you need to authorize it by executing 
-the following PowerShell commands before deploying the template:  <br />
+By default, '**`Microsoft.Azure.WebSites`**' Resource Provider (RP) doesn't have access to the Key Vault specified in the template. Hence before deploying you need to authorize it by executing 
+the following PowerShell commands :  <br />
 **PowerShell**
 ```PowerShell
 Login-AzureRmAccount  <br />
