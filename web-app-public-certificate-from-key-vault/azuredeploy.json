@@ -23,12 +23,12 @@
         }
     },
     "variables": {
-        "publicCertificateName": "[concat(parameters('existingWebAppName'), '-publiccert')]"
+        "publicCertificateName": "[concat(parameters('kaushal'), '-publiccert')]"
     },
     "resources": [
         {
             "type": "Microsoft.Web/sites/publicCertificates",
-            "name": "[concat(parameters('existingWebAppName'), '/', variables('publicCertificateName'))]",
+            "name": "[concat(parameters('kaushal'), '/', variables('publicCertificateName'))]",
             "apiVersion": "2016-03-01",
             "location": "[resourceGroup().location]",
             "properties": {
