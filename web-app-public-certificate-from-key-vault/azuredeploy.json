@@ -31,7 +31,7 @@
     "resources": [
         {
             "type": "Microsoft.Web/sites/publicCertificates",
-            "name": "["kaushal", '/', variables('publicCertificateName'))]",
+            "name": "['kaushal', '/', variables('publicCertificateName'))]",
             "apiVersion": "2016-03-01",
             "location": "[resourceGroup().location]",
             "properties": {
