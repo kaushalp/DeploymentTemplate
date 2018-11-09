@@ -5,7 +5,7 @@ In order to deploy this template, you need to have the following resources:  <br
 2. A Key Vault  <br />
 3. A Key Vault Secret containting public certificate in base64 encoded format <br />
 
-Once you have the above, replace them with the actual values in the **parameters.json** file. These are the values that needs to be replaced: <br/>
+Once you have the above, replace them with the actual values in the **azuredeploy.parameters.json** file. These are the values that needs to be replaced: <br/>
 
 + **`YOUR-SUBSCRIPTION-ID`** - the subscription ID under which the deployment needs to be made
 + **`YOUR-WEB-APP`** - An existing web app
